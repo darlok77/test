@@ -32,11 +32,6 @@ resource "aws_instance" "test-ec2-instance" {
   tags {
     Name = "intance_db"
   }
-  provisioner "file" {
-    source      = "config.json"
-    destination = "~"
-  }
-
 
   subnet_id = "${aws_subnet.main.id}"
 }
