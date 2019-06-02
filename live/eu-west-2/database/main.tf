@@ -24,13 +24,13 @@ resource "aws_db_instance" "default" {
 }
 
 resource "aws_instance" "test-ec2-instance" {
-  ami             = "ami-0e1a16be3904aeea0"
+  ami             = "ami_id" //ici
   instance_type   = "t2.micro"
-  key_name        = "key1"
+  key_name        = "ami_key" //ici
   security_groups = ["${aws_security_group.allow_tls.id}"]
 
   tags {
-    Name = "packer-example 1558594491"
+    Name = "intance_db"
   }
   provisioner "file" {
     source      = "config.json"
